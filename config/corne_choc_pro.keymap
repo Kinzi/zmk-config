@@ -89,10 +89,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q                   &kp W           &kp E           &kp R           &kp T      &kp C_MUTE  &kp C_PP  &kp Z           &kp U           &kp I           &kp O                    &kp P     &kp BSPC
-&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LC(S) S  &HMbtn LG(D) D  &HMbtn LA(F) F  &kp G      &kp LALT    &kp RALT  &HMbtn RA(H) H  &HMbtn RG(J) J  &HMbtn LC(K) K  &HRShiftR RIGHT_SHIFT L  &kp SEMI  &kp SQT
-&kp LSHFT  &kp Y                   &kp X           &kp C           &kp V           &kp B                            &kp N           &kp M           &kp COMMA       &kp DOT                  &kp FSLH  &kp ESC
-                                                   &kp LGUI        &mo 1           &kp SPACE                        &kp RET         &mo 2           &kp RALT
+&kp TAB    &kp Q                   &kp W           &kp E              &kp R          &kp T      &kp C_MUTE  &kp C_PP  &kp Z    &kp U               &kp I          &kp O              &kp P                       &kp BSPC
+&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &kp LALT    &kp RALT  &kp H    &HMbtn RIGHT_ALT J  &HMbtn RCMD K  &HRShiftR LCTRL L  &HRShiftR RIGHT_SHIFT SEMI  &kp SQT
+&kp LSHFT  &kp Y                   &kp X           &kp C              &kp V          &kp B                            &kp N    &kp M               &kp COMMA      &kp DOT            &kp FSLH                    &kp ESC
+                                                   &kp LGUI           &mo 1          &kp SPACE                        &kp RET  &mo 2               &kp RALT
             >;
         };
 
@@ -109,7 +109,7 @@
 &kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &kp RCTRL  &kp N6      &kp N7      &kp N8        &kp N9           &kp N0      &kp BSPC
 &kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &kp RALT   &kp LEFT    &kp DOWN    &kp UP        &kp RIGHT        &kp C_PP    &kp C_BRI_UP
 &kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE  &kp C_BRI_DEC
-                                          &kp LGUI      &trans        &kp SPACE                             &kp LGUI    &trans      &kp SPACE
+                                          &kp LGUI      &trans        &kp SPACE                             &kp LGUI    &kp LCTRL   &kp SPACE
             >;
         };
 
