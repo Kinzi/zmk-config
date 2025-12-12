@@ -90,7 +90,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "QWERTZ";
 
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  | BSPC |
@@ -99,10 +99,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp Z    &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT O  &HMbtn P DE_ESZETT          &kp BSPC
-&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H    &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HRShiftR LCTRL L     &HRShiftR RIGHT_SHIFT SEMI  &kp DE_PLUS
-&kp LSHFT  &kp Y                   &kp X           &kp C              &kp V          &kp B                      &kp N    &kp M                 &kp DE_COMMA          &kp DE_PERIOD         &kp MINUS                   &kp ESC
-                                                   &kp LGUI           &mo 1          &kp SPACE                  &kp RET  &mo 2                 &kp RALT
+&kp TAB    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT O  &HMbtn P DE_ESZETT          &kp BSPC
+&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HRShiftR LCTRL L     &HRShiftR RIGHT_SHIFT SEMI  &kp DE_PLUS
+&kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD         &kp MINUS                   &kp ESC
+                                                   &kp LGUI           &mo 1          &kp SPACE                  &kp RET   &mo 2                 &kp RALT
             >;
         };
 
@@ -116,10 +116,10 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1     &kp N2     &kp N3      &kp N4       &kp N5          &trans  &trans  &trans      &trans      &kp UP        &trans           &trans            &kp BSPC
-&kp LCTRL  &kp DE_N6  &kp DE_N7  &kp DE_N8   &kp DE_N9    &kp DE_N0       &trans  &trans  &trans      &kp LEFT    &kp DOWN      &kp RIGHT        &kp C_PLAY_PAUSE  &kp C_BRI_UP
-&kp LSHFT  &trans     &trans     &sys_reset  &bootloader  &studio_unlock                  &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE        &kp C_BRI_DEC
-                                 &kp LGUI    &trans       &kp SPACE                       &kp LALT    &trans      &kp SPACE
+&kp TAB    &kp PLUS   &kp N7        &kp N8        &kp N9  &kp DE_SLASH     &trans  &trans  &trans      &trans      &kp UP        &trans           &trans            &kp BSPC
+&kp LCTRL  &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp N6  &kp DE_ASTERISK  &trans  &trans  &trans      &kp LEFT    &kp DOWN      &kp RIGHT        &kp C_PLAY_PAUSE  &kp C_BRI_UP
+&kp LSHFT  &kp N0     &kp N1        &kp N2        &kp N3  &kp DE_EQUAL                     &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE        &kp C_BRI_DEC
+                                    &kp LGUI      &trans  &kp SPACE                        &kp LALT    &trans      &kp SPACE
             >;
         };
 
