@@ -64,6 +64,16 @@
             hold-trigger-key-positions = <7 8 9 11 12 13 21 22 23 24 25 26 27 34 35 36 37 38 39 43 44 45 10>;
             flavor = "tap-preferred";
         };
+
+        HMbtn: HMbtn {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMBTN";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -79,13 +89,11 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q                   &kp W  &kp E     &kp R  &kp T      &kp C_MUTE  &kp C_PP  &kp Y    &kp U  &kp I      &kp O                    &kp P     &kp BSPC
-&kp LCTRL  &HRShiftL LEFT_SHIFT A  &kp S  &kp D     &kp F  &kp G      &kp LALT    &kp RALT  &kp H    &kp J  &kp K      &HRShiftR RIGHT_SHIFT L  &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z                   &kp X  &kp C     &kp V  &kp B                            &kp N    &kp M  &kp COMMA  &kp DOT                  &kp FSLH  &kp ESC
-                                          &kp LGUI  &mo 1  &kp SPACE                        &kp RET  &mo 2  &kp RALT
+&kp TAB    &kp Q                   &kp W           &kp E           &kp R           &kp T      &kp C_MUTE  &kp C_PP  &kp Z           &kp U           &kp I           &kp O                    &kp P     &kp BSPC
+&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LC(S) S  &HMbtn LG(D) D  &HMbtn LA(F) F  &kp G      &kp LALT    &kp RALT  &HMbtn RA(H) H  &HMbtn RG(J) J  &HMbtn RC(K) K  &HRShiftR RIGHT_SHIFT L  &kp SEMI  &kp SQT
+&kp LSHFT  &kp Y                   &kp X           &kp C           &kp V           &kp B                            &kp N           &kp M           &kp COMMA       &kp DOT                  &kp FSLH  &kp ESC
+                                                   &kp LGUI        &mo 1           &kp SPACE                        &kp RET         &mo 2           &kp RALT
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
         };
 
         lower_layer {
@@ -98,10 +106,10 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &kp RCTRL  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
-&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &kp RALT   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans  &trans
-&kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &trans    &trans    &trans     &trans     &trans  &trans
-                                          &kp LGUI      &trans        &kp SPACE                             &kp LGUI  &trans    &kp SPACE
+&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &kp RCTRL  &kp N6         &kp N7        &kp N8        &kp N9           &kp N0      &kp BSPC
+&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &kp RALT   &kp LEFT       &kp DOWN      &kp UP        &kp RIGHT        &trans      &trans
+&kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &kp C_BRI_DEC  &kp C_BRI_UP  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp K_MUTE  &trans
+                                          &kp LGUI      &trans        &kp SPACE                             &kp LGUI       &trans        &kp SPACE
             >;
         };
 
