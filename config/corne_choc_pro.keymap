@@ -116,10 +116,10 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &trans  &trans  &kp N6            &kp N7      &kp N8        &kp N9           &kp N0      &kp BSPC
-&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &kp C_PLAY_PAUSE  &kp LEFT    &kp UP        &kp DOWN         &kp RIGHT   &kp C_BRI_UP
-&kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                  &kp C_PREV        &kp C_NEXT  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE  &kp C_BRI_DEC
-                                          &kp LGUI      &trans        &kp SPACE                       &kp LALT          &kp LCTRL   &kp SPACE
+&kp TAB    &kp N1     &kp N2     &kp N3      &kp N4       &kp N5          &trans  &trans  &trans      &trans      &kp UP        &trans           &trans            &kp BSPC
+&kp LCTRL  &kp DE_N6  &kp DE_N7  &kp DE_N8   &kp DE_N9    &kp DE_N0       &trans  &trans  &trans      &kp LEFT    &kp DOWN      &kp RIGHT        &kp C_PLAY_PAUSE  &kp C_BRI_UP
+&kp LSHFT  &trans     &trans     &sys_reset  &bootloader  &studio_unlock                  &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE        &kp C_BRI_DEC
+                                 &kp LGUI    &trans       &kp SPACE                       &kp LALT    &trans      &kp SPACE
             >;
         };
 
@@ -141,12 +141,12 @@
         };
 
         extra_layer_1 {
-            display-name = "EXTRA 1";
+            display-name = "SETTINGS";
             bindings = <
-&trans  &trans           &trans           &trans           &trans           &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &trans                           &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans           &trans           &trans                           &trans  &trans  &trans
+&trans  &trans           &trans           &trans           &trans           &trans           &trans  &trans  &sys_reset    &bootloader   &studio_unlock  &trans        &trans        &trans
+&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4  &trans
+&trans  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &trans                           &trans        &trans        &trans          &trans        &bt BT_CLR    &trans
+                                          &trans           &trans           &trans                           &trans        &trans        &trans
             >;
         };
 
