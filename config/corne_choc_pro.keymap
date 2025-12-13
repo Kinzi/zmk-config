@@ -118,7 +118,7 @@
 
             bindings = <
 &kp ESC    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT DE_O  &HMbtn DE_ESZETT DE_P            &kp BSPC
-&kp TAB    &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HMbtn LCTRL L           &HRShiftR RIGHT_SHIFT RA(DE_N7)  &customExQu
+&kp TAB    &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HMbtn LCTRL L           &HRShiftR RIGHT_SHIFT LA(DE_N7)  &customExQu
 &kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD            &kp DE_MINUS                     &kp LEFT_PARENTHESIS
                                                    &kp LGUI           &mo 1          &kp SPACE                  &kp RET   &mo 2                 &kp RALT
             >;
