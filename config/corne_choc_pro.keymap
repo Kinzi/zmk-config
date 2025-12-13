@@ -79,7 +79,16 @@
         customExQu: customExQu {
             compatible = "zmk,behavior-mod-morph";
             label = "CUSTOMEXQU";
-            bindings = <&kp DE_EXCLAMATION>, <&kp DE_QUESTION>;
+            bindings = <&kp N1>, <&kp DE_ESZETT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        customPiBack: customPiBack {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CUSTOMPIBACK";
+            bindings = <&kp LS(DE_BACKSLASH)>, <&kp DE_PIPE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -108,9 +117,9 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT O  &HMbtn DE_ESZETT DE_P            &kp BSPC
-&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HRShiftR LCTRL L     &HRShiftR RIGHT_SHIFT BACKSLASH  &customExQu
-&kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD         &kp DE_MINUS                     &kp ESC
+&kp TAB    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT DE_O  &HMbtn DE_ESZETT DE_P          &kp BSPC
+&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HMbtn LCTRL L           &HRShiftR RIGHT_SHIFT DE_PIPE  &customExQu
+&kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD            &kp DE_MINUS                   &kp ESC
                                                    &kp LGUI           &mo 1          &kp SPACE                  &kp RET   &mo 2                 &kp RALT
             >;
         };
@@ -133,7 +142,7 @@
         };
 
         raise_layer {
-            display-name = "SYMBOL";
+            display-name = "CODE";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  | LCTRL | RCTRL |  ^  |  &  |  *  |  (  |  )  | BSPC |
@@ -143,7 +152,7 @@
 
             bindings = <
 &kp TAB    &kp EXCL            &kp AT               &kp HASH        &kp DLLR     &kp PRCNT     &trans  &trans  &kp CARET  &kp AMPS   &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_ASTERISK  &kp BSPC
-&kp LCTRL  &kp DE_EXCLAMATION  &kp DE_QUESTION      &kp DE_AT_SIGN  &kp DE_EURO  &kp DE_TILDE  &trans  &trans  &kp MINUS  &kp EQUAL  &kp LBKT                 &kp RBKT                  &kp BSLH         &kp GRAVE
+&kp LCTRL  &kp DE_EXCLAMATION  &kp DE_QUESTION      &kp DE_AT_SIGN  &kp DE_EURO  &kp DE_TILDE  &trans  &trans  &kp MINUS  &kp EQUAL  &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &kp BSLH         &kp GRAVE
 &kp LSHFT  &kp DE_LESS_THAN    &kp DE_GREATER_THAN  &trans          &kp DE_PIPE  &trans                        &kp UNDER  &kp PLUS   &kp LBRC                 &kp RBRC                  &kp PIPE         &kp TILDE
                                                     &kp LGUI        &trans       &kp SPACE                     &kp RET    &trans     &kp RALT
             >;
