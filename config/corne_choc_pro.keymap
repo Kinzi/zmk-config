@@ -137,32 +137,18 @@
             display-name = "NUMBER";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5    |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   |  LALT  | RALT  | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT | BTCR| RGB | RST | BOOT| Unlock|        |       |     |     |     |     |     |      |
-            //                    | GUI |     | SPC   |        | ENT   |     | ALT |
+            // |  TAB |  +  |  7  |  8  |  9  |  /  |        |       |     | PGD |  UP  | PGU |  0  | BSPC |
+            // | CTRL |  -  |  4  |  5  |  6  |  *  |        |       |  PP | LFT |  DWN | RGT |     |      |
+            // | SHFT |  0  |  1  |  2  |  3  |  =  |        |       | Pre | NXT | VOL- | VOL+|  MT |      |
+            //                    | GUI |     | SPC |        |       |     | ALT |
 
             bindings = <
-&kp ESC    &kp DE_PLUS   &kp N7  &kp N8    &kp N9  &kp DE_SLASH     &trans  &trans  &trans            &kp PAGE_UP             &kp UP        &kp PAGE_DOWN    &trans                              &kp BSPC
-&kp TAB    &kp DE_MINUS  &kp N4  &kp N5    &kp N6  &kp DE_ASTERISK  &trans  &trans  &kp C_PLAY_PAUSE  &HMbtn LALT LEFT_ARROW  &kp DOWN      &kp RIGHT        &HRShiftR RIGHT_SHIFT C_PLAY_PAUSE  &kp C_BRI_UP
+&kp ESC    &kp DE_PLUS   &kp N7  &kp N8    &kp N9  &kp DE_FSLH     &trans  &trans  &trans            &kp PAGE_UP             &kp UP        &kp PAGE_DOWN    &trans                              &kp BSPC
+&kp TAB    &kp DE_MINUS  &kp N4  &kp N5    &kp N6  &kp DE_STAR  &trans  &trans  &kp C_PLAY_PAUSE  &HMbtn LALT LEFT_ARROW  &kp DOWN      &kp RIGHT        &HRShiftR RIGHT_SHIFT C_PLAY_PAUSE  &kp C_BRI_UP
 &kp LSHFT  &kp N0        &kp N1  &kp N2    &kp N3  &kp DE_EQUAL                     &kp C_PREV        &kp C_NEXT              &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE                          &kp C_BRI_DEC
                                  &kp LGUI  &trans  &kp SPACE                        &kp LALT          &trans                  &kp SPACE
             >;
         };
-
-        sym {
-            // -------------------------------------------------------------------------------
-            // |   ß  |  €  |  #  |  [  |  ]  |  !  |   |  ?  |  {  |  }  |  *  |  /  |   \  |
-            // |   ^  |  $  |  `  |  '  |  =  |  &  |   |  "  |  (  |  )  |  +  | "|" |      |
-            // |   °  |  §  |  <  |  >  |     |  %  |   |  @  |     |  ;  |  :  |  _  |   ~  |
-            //                    | SYM | BCK |     |   | ENT | SPC |     |
-                        bindings = <
-&kp DE_SHARP_S    &kp DE_EURO     &kp DE_HASH    &kp DE_LBKT   &kp DE_RBKT    &kp DE_EXCL         &kp DE_QMARK   &kp DE_LEFT_BRACE   &kp DE_RIGHT_BRACE   &kp DE_STAR    &kp DE_FSLH    &kp DE_BSLH
-&kp DE_CARET      &kp DE_DOLLAR   &kp DE_GRAVE   &kp DE_SQT    &kp DE_EQUAL   &kp DE_AMPS         &kp DE_DQT     &kp DE_LPAR         &kp DE_RPAR          &kp DE_PLUS    &kp DE_PIPE    &none
-&kp DE_DEG        &kp DE_SECT     &kp DE_LT      &kp DE_GT     &none          &kp DE_PRCNT        &kp DE_AT      &none               &kp DE_SEMI          &kp DE_COLON   &kp DE_UNDER   &kp DE_TILDE
-                                                &trans        &trans         &none               &trans         &trans              &none
-                        >;
-                };
 
         raise_layer {
             display-name = "CODE";
