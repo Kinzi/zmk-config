@@ -93,6 +93,14 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        paren_lr: paren_lr {
+  compatible = "zmk,behavior-mod-morph";
+  label = "PAREN_LR";
+  #binding-cells = <0>;
+  bindings = <&kp LS(DE_N8)>, <&kp LS(DE_N9)>;
+  mods = <(MOD_LSFT|MOD_RSFT)>;
+};
     };
 
     combos {
