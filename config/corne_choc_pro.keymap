@@ -79,9 +79,9 @@
         customExQu: customExQu {
             compatible = "zmk,behavior-mod-morph";
             label = "CUSTOMEXQU";
-            bindings = <&kp DE_N1>, <&kp DE_ESZETT>;
 
             #binding-cells = <0>;
+            bindings = <&kp LS(DE_N1)>, <&kp LS(DE_ESZETT)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
