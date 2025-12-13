@@ -22,9 +22,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             hold-while-undecided;
-            hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 0 1 2 3 4 5 14 15 16 17 18 19 28 29 30 31 32 33 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 40 41 42>;
+            hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 1 2 3 4 5 17>;
             hold-trigger-on-release;
         };
 
@@ -34,36 +34,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             hold-while-undecided;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <7 8 9 11 12 13 21 22 23 24 25 26 27 34 35 36 37 38 39 43 44 45 10>;
-        };
-
-        HRR: HRR {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-while-undecided;
-            hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 0 1 2 3 4 5 14 15 16 17 18 19 28 29 30 31 32 33 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 40 41 42>;
-            hold-trigger-on-release;
-            flavor = "tap-preferred";
-        };
-
-        HRL: HRL {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRL";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-while-undecided;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <7 8 9 11 12 13 21 22 23 24 25 26 27 34 35 36 37 38 39 43 44 45 10>;
-            flavor = "tap-preferred";
+            hold-trigger-key-positions = <8 9 11 12 22 23 24 25 26 27 34 35 36 37 38 39 10>;
         };
 
         HMbtn: HMbtn {
@@ -82,15 +56,6 @@
             #binding-cells = <0>;
             bindings = <&kp LS(DE_N1)>, <&kp LS(DE_ESZETT)>;
 
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        customPiBack: customPiBack {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CUSTOMPIBACK";
-            bindings = <&kp DE_BACKSLASH>, <&kp DE_PIPE>;
-
-            #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -128,7 +93,7 @@
             bindings = <
 &kp ESC    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT DE_O  &HMbtn DE_ESZETT DE_P             &kp BSPC
 &kp TAB    &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HMbtn LCTRL L           &HRShiftR RIGHT_SHIFT DE_AT_SIGN  &customExQu
-&kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD            &kp DE_MINUS                      &paren_lr
+&kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD            &kp DE_MINUS                      &kp LCTRL
                                                    &kp LGUI           &mo 2          &kp SPACE                  &kp RET   &mo 1                 &kp RALT
             >;
         };
@@ -160,10 +125,10 @@
             //                    | GUI |     | SPC |               | ENT |     | ALT |
 
             bindings = <
-&trans     &kp EXCL  &kp AT           &kp HASH        &kp DLLR     &kp PRCNT     &trans  &trans  &kp DE_GRAVE          &kp AMPS             &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_HASH       &kp BSPC
-&trans     &trans    &kp DE_QUESTION  &kp DE_AT_SIGN  &kp DE_EURO  &kp DE_TILDE  &trans  &trans  &kp DE_DOUBLE_QUOTES  &kp DE_FSLH          &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &kp DE_PIPE       &kp DE_CARET
-&kp LSHFT  &trans    &trans           &trans          &kp DE_PIPE  &trans                        &kp DE_LESS_THAN      &kp DE_GREATER_THAN  &kp DE_LEFT_BRACE        &kp DE_RIGHT_BRACE        &kp DE_BACKSLASH  &kp TILDE
-                                      &kp LGUI        &trans       &kp SPACE                     &kp RET               &trans               &kp RALT
+&trans     &kp EXCL  &kp AT           &kp HASH        &kp DLLR     &kp PRCNT     &trans  &trans  &kp DE_ACUTE       &kp DE_GRAVE          &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_HASH   &kp BSPC
+&trans     &trans    &kp DE_QUESTION  &kp DE_AT_SIGN  &kp DE_EURO  &kp DE_TILDE  &trans  &trans  &kp DE_CARET       &kp DE_DOUBLE_QUOTES  &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &kp DE_PIPE   &kp DE_FSLH
+&kp LSHFT  &trans    &trans           &trans          &kp DE_PIPE  &trans                        &kp DE_LEFT_BRACE  &kp DE_RIGHT_BRACE    &kp DE_LESS_THAN         &kp DE_GREATER_THAN       &kp DE_TILDE  &kp DE_BACKSLASH
+                                      &kp LGUI        &trans       &kp SPACE                     &kp RET            &trans                &kp RALT
             >;
         };
 
