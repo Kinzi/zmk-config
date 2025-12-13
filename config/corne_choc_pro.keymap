@@ -75,6 +75,15 @@
             tapping-term-ms = <400>;
             flavor = "tap-preferred";
         };
+
+        customExQu: customExQu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CUSTOMEXQU";
+            bindings = <&kp DE_EXCLAMATION>, <&kp DE_QUESTION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -99,9 +108,9 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT O  &HMbtn DE_ESZETT DE_P       &kp BSPC
-&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HRShiftR LCTRL L     &HRShiftR RIGHT_SHIFT EXCL  &kp QMARK
-&kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD         &kp MINUS                   &kp ESC
+&kp TAB    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT O  &HMbtn DE_ESZETT DE_P            &kp BSPC
+&kp LCTRL  &HRShiftL LEFT_SHIFT A  &HMbtn LCTRL S  &HMbtn LEFT_GUI D  &HMbtn LALT F  &kp G      &trans  &trans  &kp H     &HMbtn RIGHT_ALT J    &HMbtn RCMD K         &HRShiftR LCTRL L     &HRShiftR RIGHT_SHIFT BACKSLASH  &customExQu
+&kp LSHFT  &kp DE_Y                &kp X           &kp C              &kp V          &kp B                      &kp N     &kp M                 &kp DE_COMMA          &kp DE_PERIOD         &kp DE_MINUS                     &kp ESC
                                                    &kp LGUI           &mo 1          &kp SPACE                  &kp RET   &mo 2                 &kp RALT
             >;
         };
