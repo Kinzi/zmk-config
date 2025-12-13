@@ -143,10 +143,10 @@
             //                    | GUI |     | SPC |        |       |     | ALT |
 
             bindings = <
-&kp ESC    &kp DE_PLUS   &kp N7  &kp N8    &kp N9  &kp DE_FSLH     &trans  &trans  &trans            &kp PAGE_UP             &kp UP        &kp PAGE_DOWN    &trans                              &kp BSPC
-&kp TAB    &kp DE_MINUS  &kp N4  &kp N5    &kp N6  &kp DE_STAR  &trans  &trans  &kp C_PLAY_PAUSE  &HMbtn LALT LEFT_ARROW  &kp DOWN      &kp RIGHT        &HRShiftR RIGHT_SHIFT C_PLAY_PAUSE  &kp C_BRI_UP
-&kp LSHFT  &kp N0        &kp N1  &kp N2    &kp N3  &kp DE_EQUAL                     &kp C_PREV        &kp C_NEXT              &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE                          &kp C_BRI_DEC
-                                 &kp LGUI  &trans  &kp SPACE                        &kp LALT          &trans                  &kp SPACE
+&kp ESC    &kp DE_PLUS   &kp N7  &kp N8    &kp N9  &kp DE_FSLH   &trans  &trans  &trans            &kp PAGE_UP             &kp UP        &kp PAGE_DOWN    &trans                              &kp BSPC
+&kp TAB    &kp DE_MINUS  &kp N4  &kp N5    &kp N6  &kp DE_STAR   &trans  &trans  &kp C_PLAY_PAUSE  &HMbtn LALT LEFT_ARROW  &kp DOWN      &kp RIGHT        &HRShiftR RIGHT_SHIFT C_PLAY_PAUSE  &kp C_BRI_UP
+&kp LSHFT  &kp N0        &kp N1  &kp N2    &kp N3  &kp DE_EQUAL                  &kp C_PREV        &kp C_NEXT              &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE                          &kp C_BRI_DEC
+                                 &kp LGUI  &trans  &kp SPACE                     &kp LALT          &trans                  &kp SPACE
             >;
         };
 
@@ -160,10 +160,10 @@
             //                    | GUI |     | SPC |               | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL            &kp AT               &kp HASH        &kp DLLR     &kp PRCNT     &trans  &trans  &kp CARET  &kp AMPS   &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_ASTERISK  &kp BSPC
-&kp LCTRL  &kp DE_EXCLAMATION  &kp DE_QUESTION      &kp DE_AT_SIGN  &kp DE_EURO  &kp DE_TILDE  &trans  &trans  &kp MINUS  &kp EQUAL  &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &kp BSLH         &kp GRAVE
-&kp LSHFT  &kp DE_LESS_THAN    &kp DE_GREATER_THAN  &trans          &kp DE_PIPE  &trans                        &kp UNDER  &kp PLUS   &kp DE_LEFT_BRACE        &kp DE_RIGHT_BRACE        &kp PIPE         &kp TILDE
-                                                    &kp LGUI        &trans       &kp SPACE                     &kp RET    &trans     &kp RALT
+&kp TAB    &kp EXCL            &kp AT               &kp HASH        &kp DLLR     &kp PRCNT     &trans  &trans  &kp CARET         &kp AMPS             &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_ASTERISK  &kp BSPC
+&kp LCTRL  &kp DE_EXCLAMATION  &kp DE_QUESTION      &kp DE_AT_SIGN  &kp DE_EURO  &kp DE_TILDE  &trans  &trans  &kp MINUS         &kp EQUAL            &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &kp BSLH         &kp GRAVE
+&kp LSHFT  &kp DE_LESS_THAN    &kp DE_GREATER_THAN  &trans          &kp DE_PIPE  &trans                        &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_LEFT_BRACE        &kp DE_RIGHT_BRACE        &kp PIPE         &kp TILDE
+                                                    &kp LGUI        &trans       &kp SPACE                     &kp RET           &trans               &kp RALT
             >;
         };
 
