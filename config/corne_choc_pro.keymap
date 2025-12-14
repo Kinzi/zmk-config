@@ -81,6 +81,11 @@
             bindings = <&kp GLOBE>;
             key-positions = <38 39>;
         };
+
+        cmd+ctr+4 {
+            bindings = <&kp LS(LG(DE_N4))>;
+            key-positions = <3 4>;
+        };
     };
 
     keymap {
