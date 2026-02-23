@@ -33,9 +33,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRSHIFTR";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <80>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
@@ -62,9 +62,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRSHIFTL";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <80>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
@@ -134,8 +134,8 @@
             bindings = <&kp LS(LG(DE_N4))>;
             key-positions = <3 4>;
             layers = <0>;
-            require-prior-idle-ms = <200>;
-            timeout-ms = <100>;
+            require-prior-idle-ms = <350>;
+            timeout-ms = <50>;
         };
     };
 
