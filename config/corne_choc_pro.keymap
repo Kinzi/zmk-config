@@ -106,7 +106,7 @@
         // Position 1 = Q, Position 12 = P (top row 5th from right-half left)
 
         wow_enter {
-            bindings = <&to 5>;
+            bindings = <&to 4>;
             key-positions = <1 12>;
             layers = <0>;
             timeout-ms = <50>;
@@ -120,7 +120,7 @@
         wow_exit {
             bindings = <&to 0>;
             key-positions = <1 12>;
-            layers = <5>;
+            layers = <6>;
             timeout-ms = <50>;
             require-prior-idle-ms = <350>;
         };
@@ -169,6 +169,16 @@
             >;
         };
 
+        wow_layer {
+            display-name = "WOW";
+            bindings = <
+&kp ESC    &kp Q   &kp W   &kp E   &kp R      &kp T      &trans  &trans  &kp N    &kp C     &kp K      &kp O        &kp P   &kp BSPC
+&kp TAB    &kp A   &kp S   &kp D   &kp F      &kp G      &trans  &trans  &kp M    &kp B     &kp I      &kp DE_FSLH  &kp L   &kp RET
+&kp LSHFT  &kp N1  &kp N2  &kp N3  &kp N4     &kp N5                     &kp N6   &kp N7    &kp N8     &kp N9       &kp N0  &kp DE_MINUS
+                           &kp X   &kp LCTRL  &kp SPACE                  &kp RET  &kp RALT  &kp RSHFT
+            >;
+        };
+
         extra_layer_2 {
             display-name = "EXTRA 2";
             bindings = <
@@ -196,38 +206,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        // ============================================================
-        // WoW GAMING LAYER (layer index 5)
-        // ============================================================
-        // Left side - all gameplay keys in their natural QWERTZ home positions.
-        // Right side - numbers continue across bottom row to match left half.
-        //
-        // LEFT HALF (movement & combat):
-        //   Row 1:  ESC  | Q | W | E | R | T          ← Q, W, E, R, T abilities
-        //   Row 2:  TAB  | A | S | D | F | G          ← A/S/D movement, F/G abilities
-        //   Row 3:  SHFT | 1 | 2 | 3 | 4 | 5          ← action bar 1-5
-        //   Thumbs:        X  | LCTRL | SPACE        ← crouch / mod / jump
-        //
-        // RIGHT HALF (menus & secondary):
-        //   Row 1:  ... | N | C | K | O | P   | BSPC  ← occasional menus + P
-        //   Row 2:  ... | M | B | I | / | L   | ENTER ← Map/Bags/Inv/slash/questLog
-        //   Row 3:        6 | 7 | 8 | 9 | 0          ← action bar 6-0
-        //   Thumbs:       ENT | RALT | RSHFT
-        //
-        // ENTER and EXIT:  press Q + P together (same combo for both).
-        // Q is at position 1, P is at position 12 (top row, 5th right-half slot).
-        // ============================================================
-
-        wow_layer {
-            display-name = "WOW";
-            bindings = <
-&kp ESC    &kp Q   &kp W   &kp E   &kp R      &kp T      &trans  &trans  &kp N    &kp C     &kp K      &kp O        &kp P   &kp BSPC
-&kp TAB    &kp A   &kp S   &kp D   &kp F      &kp G      &trans  &trans  &kp M    &kp B     &kp I      &kp DE_FSLH  &kp L   &kp RET
-&kp LSHFT  &kp N1  &kp N2  &kp N3  &kp N4     &kp N5                     &kp N6   &kp N7    &kp N8     &kp N9       &kp N0  &kp DE_MINUS
-                           &kp X   &kp LCTRL  &kp SPACE                  &kp RET  &kp RALT  &kp RSHFT
             >;
         };
 
