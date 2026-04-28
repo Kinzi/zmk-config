@@ -16,19 +16,6 @@
 
 / {
     behaviors {
-        /* HRShiftR: HRShiftR {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRSHIFTR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            hold-while-undecided;
-            hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 1 2 3 4 5 17>;
-            hold-trigger-on-release;
-        }; */
-        // Right hand home row mods - only trigger hold when pressing LEFT hand
-
         HRShiftR: HRShiftR {
             compatible = "zmk,behavior-hold-tap";
             label = "HRSHIFTR";
@@ -40,23 +27,9 @@
             bindings = <&kp>, <&kp>;
 
             // Left hand positions (including thumb)
-
             hold-trigger-key-positions = <0 1 2 3 4 5 14 15 16 17 18 19 28 29 30 31 32 33>;
             hold-trigger-on-release;
         };
-
-        /* HRShiftL: HRShiftL {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRSHIFTL";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            hold-while-undecided;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <8 9 11 12 22 23 24 25 26 27 34 35 36 37 38 39 10>;
-        }; */
-        // Left hand home row mods - only trigger hold when pressing RIGHT hand
 
         HRShiftL: HRShiftL {
             compatible = "zmk,behavior-hold-tap";
@@ -69,21 +42,9 @@
             bindings = <&kp>, <&kp>;
 
             // Right hand positions (including thumb)
-
             hold-trigger-key-positions = <8 9 10 11 12 13 22 23 24 25 26 27 34 35 36 37 38 39>;
             hold-trigger-on-release;
         };
-
-        /*HMbtn: HMbtn {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMBTN";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <350>;
-            flavor = "tap-preferred";
-        }; */
-        // For top row hold-taps (U/I/O/P with umlauts) - no bilateral needed
 
         HMbtn: HMbtn {
             compatible = "zmk,behavior-hold-tap";
@@ -137,6 +98,38 @@
             require-prior-idle-ms = <350>;
             timeout-ms = <50>;
         };
+
+        // Combo to ENTER WoW gaming layer (layer 5)
+        // Press Q + P together on the default layer to switch to WoW.
+        // Position 1 = Q, Position 12 = P (top row 5th from right-half left)
+        wow_enter {
+            bindings = <&to 5>;
+            key-positions = <1 12>;
+            layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <350>;
+        };
+
+        // Combo to EXIT WoW gaming layer (back to layer 0)
+        // Same Q + P positions as enter - just one combo to remember.
+        // On the WoW layer, position 12 still holds P so Q+P still works.
+        wow_exit {
+            bindings = <&to 0>;
+            key-positions = <1 12>;
+            layers = <5>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <350>;
+        };
+    };
+
+    macros {
+        switch_layer: switch_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&switch_layer &kp A &kp S &kp F &kp D>;
+            label = "SWITCH_LAYER";
+            wait-ms = <200>;
+        };
     };
 
     keymap {
@@ -144,12 +137,6 @@
 
         default_layer {
             display-name = "QWERTZ";
-
-            // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |  LALT |  RALT |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |               |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
 &kp ESC    &kp Q                   &kp W           &kp E              &kp R          &kp T      &trans  &trans  &kp DE_Z  &HMbtn DE_U_UMLAUT U  &HMbtn DE_A_UMLAUT I  &HMbtn DE_O_UMLAUT DE_O  &HMbtn DE_ESZETT DE_P             &kp BSPC
@@ -162,12 +149,6 @@
         lower_layer {
             display-name = "NUMBER";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  +  |  7  |  8  |  9  |  /  |        |       |     | PGD |  UP  | PGU |  0  | BSPC |
-            // | CTRL |  -  |  4  |  5  |  6  |  *  |        |       |  PP | LFT |  DWN | RGT |     |      |
-            // | SHFT |  0  |  1  |  2  |  3  |  =  |        |       | Pre | NXT | VOL- | VOL+|  MT |      |
-            //                    | GUI |     | SPC |        |       |     | ALT |
-
             bindings = <
 &kp ESC    &kp DE_ASTERISK  &kp N7  &kp N8    &kp N9  &kp DE_FSLH   &trans  &trans  &trans            &kp PAGE_UP     &kp UP         &kp PAGE_DOWN    &trans                              &kp BSPC
 &kp TAB    &kp DE_MINUS     &kp N4  &kp N5    &kp N6  &kp DE_PLUS   &trans  &trans  &kp C_PLAY_PAUSE  &kp LEFT_ARROW  &kp DOWN       &kp RIGHT        &HRShiftR RIGHT_SHIFT C_PLAY_PAUSE  &kp C_BRI_UP
@@ -178,12 +159,6 @@
 
         raise_layer {
             display-name = "CODE";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  | LCTRL | RCTRL |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |  LALT | RALT  |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |               |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |               | ENT |     | ALT |
 
             bindings = <
 &trans     &kp DE_DEGREE  &kp DE_SECTION    &kp HASH          &kp DLLR     &kp PRCNT     &trans  &trans  &kp DE_ACUTE         &kp DE_GRAVE          &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_HASH   &kp BSPC
@@ -206,7 +181,7 @@
         extra_layer_2 {
             display-name = "EXTRA 2";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Q   &kp W   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans                  &trans  &trans  &trans
@@ -233,13 +208,34 @@
             >;
         };
 
-        extra_layer_5 {
-            display-name = "EXTRA 5";
+        // ============================================================
+        // WoW GAMING LAYER (layer index 5)
+        // ============================================================
+        // Left side - all gameplay keys in their natural QWERTZ home positions.
+        // Right side - numbers continue across bottom row to match left half.
+        //
+        // LEFT HALF (movement & combat):
+        //   Row 1:  ESC  | Q | W | E | R | T          ← Q, W, E, R, T abilities
+        //   Row 2:  TAB  | A | S | D | F | G          ← A/S/D movement, F/G abilities
+        //   Row 3:  SHFT | 1 | 2 | 3 | 4 | 5          ← action bar 1-5
+        //   Thumbs:        X  | LCTRL | SPACE        ← crouch / mod / jump
+        //
+        // RIGHT HALF (menus & secondary):
+        //   Row 1:  ... | N | C | K | O | P   | BSPC  ← occasional menus + P
+        //   Row 2:  ... | M | B | I | / | L   | ENTER ← Map/Bags/Inv/slash/questLog
+        //   Row 3:        6 | 7 | 8 | 9 | 0          ← action bar 6-0
+        //   Thumbs:       ENT | RALT | RSHFT
+        //
+        // ENTER and EXIT:  press Q + P together (same combo for both).
+        // Q is at position 1, P is at position 12 (top row, 5th right-half slot).
+        // ============================================================
+        wow_layer {
+            display-name = "WOW";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
+&kp ESC    &kp Q   &kp W   &kp E   &kp R      &kp T      &trans  &trans  &kp N   &kp C     &kp K      &kp O        &kp P         &kp BSPC
+&kp TAB    &kp A   &kp S   &kp D   &kp F      &kp G      &trans  &trans  &kp M   &kp B     &kp I      &kp DE_FSLH  &kp L         &kp RET
+&kp LSHFT  &kp N1  &kp N2  &kp N3  &kp N4     &kp N5                     &kp N6  &kp N7    &kp N8     &kp N9       &kp N0        &kp DE_MINUS
+                           &kp X   &kp LCTRL  &kp SPACE                  &kp RET &kp RALT  &kp RSHFT
             >;
         };
 
